@@ -1,0 +1,159 @@
+/* General Body Styling */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #1a1a1a; /* Dark background */
+    color: #e0e0e0; /* Light gray text color */
+    margin: 0;
+    padding: 0;
+}
+
+/* Navbar */
+nav {
+    background-color: #333333; /* Dark gray */
+    padding: 20px 0;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    margin: 0 25px;
+}
+
+nav ul li a {
+    color: #e0e0e0; /* Light gray */
+    text-decoration: none;
+    padding: 14px 25px;
+    border-radius: 25px;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 1.1rem;
+}
+
+nav ul li a:hover {
+    background-color: #445566; /* Muted teal */
+    transition: background-color 0.3s ease;
+}
+
+/* Container */
+.container {
+    width: 80%;
+    margin: 30px auto;
+}
+
+/* Title */
+h2 {
+    text-align: center;
+    color: #66c2cd; /* Soft teal */
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+}
+
+/* Employee List - Card Layout */
+.employee-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 30px;
+    margin-top: 20px;
+}
+
+/* Employee Card */
+.employee-card {
+    background-color: #262626; /* Dark gray */
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease-in-out;
+    text-align: center;
+}
+
+.employee-card:hover {
+    transform: translateY(-10px);
+}
+
+.employee-card h3 {
+    color: #66c2cd; /* Soft teal */
+    font-size: 1.75rem;
+    font-family: 'Georgia', serif;
+}
+
+.employee-card p {
+    margin: 5px 0;
+    font-size: 1rem;
+}
+
+/* Buttons */
+button {
+    background-color: #445566; /* Muted teal */
+    color: #e0e0e0; /* Light gray */
+    padding: 12px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    margin-top: 15px;
+    width: 100%;
+    font-size: 1.1rem;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #567a89; /* Slightly brighter teal */
+}
+
+/* Delete Button */
+.delete {
+    background-color: #8097b1; /* Pale blue */
+}
+
+.delete:hover {
+    background-color: #6a85a1; /* Slightly darker blue */
+}
+
+/* Form Styling */
+form {
+    background-color: #262626; /* Dark gray */
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.5);
+}
+
+form input {
+    width: 100%;
+    padding: 12px;
+    margin: 12px 0;
+    background-color: #333333; /* Medium dark gray */
+    color: #e0e0e0; /* Light gray */
+    border: 1px solid #555555;
+    border-radius: 10px;
+}
+
+form input:focus {
+    border-color: #66c2cd; /* Soft teal */
+    outline: none;
+}
+
+/* Form Label */
+label {
+    font-weight: bold;
+    color: #66c2cd; /* Soft teal */
+    font-size: 1.1rem;
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+    .employee-list {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .employee-list {
+        grid-template-columns: 1fr;
+    }
+}

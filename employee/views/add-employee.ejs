@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Employee</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/add">Add Employee</a></li>
+        </ul>
+    </nav>
+
+    <!-- Add Employee Form -->
+    <div class="container">
+        <h2>Add New Employee</h2>
+        <form action="/add" method="POST">
+            <label for="employeeName">Employee Name:</label>
+            <input type="text" id="employeeName" name="employeeName" required>
+
+            <label for="employeeDesignation">Designation:</label>
+            <input type="text" id="employeeDesignation" name="employeeDesignation" required>
+
+            <label for="employeeLocation">Location:</label>
+            <input type="text" id="employeeLocation" name="employeeLocation" required>
+
+            <label for="employeeSalary">Salary:</label>
+            <input type="number" id="employeeSalary" name="employeeSalary" required>
+
+            <button type="submit">Add Employee</button>
+        </form>
+    </div>
+
+</body>
+</html>

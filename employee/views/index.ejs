@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Management</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/add">Add Employee</a></li>
+        </ul>
+    </nav>
+
+    <!-- Employee List -->
+    <div class="container">
+        <h2>Employee List</h2>
+        <div class="employee-list">
+            <% employees.forEach(function(employee) { %>
+                <div class="employee-card">
+                    <h3><%= employee.name %></h3>
+                    <p><strong>Designation:</strong> <%= employee.designation %></p>
+                    <p><strong>Location:</strong> <%= employee.location %></p>
+                    <p><strong>Salary:</strong> $<%= employee.salary %></p>
+                    <a href="/edit/<%= employee.id %>"><button>Edit</button></a>
+                    <a href="/delete/<%= employee.id %>"><button class="delete">Delete</button></a>
+                </div>
+            <% }); %>
+        </div>
+    </div>
+    
+</body>
+</html>

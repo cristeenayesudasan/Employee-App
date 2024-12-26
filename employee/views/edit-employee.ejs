@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Employee</title>
+
+    <style>
+        
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #121212; 
+    color: #f1f1f1; 
+    margin: 0;
+    padding: 0;
+}
+
+
+nav {
+    background-color: #1f1f1f;
+    padding: 15px 0;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    margin: 0 20px;
+}
+
+nav ul li a {
+    color: #f1f1f1;
+    text-decoration: none;
+    padding: 12px 20px;
+    border-radius: 5px;
+    font-weight: 500;
+}
+
+nav ul li a:hover {
+    background-color: #333333;
+    transition: background-color 0.3s ease;
+}
+
+
+.container {
+    width: 80%;
+    margin: 30px auto;
+}
+
+
+h2 {
+    text-align: center;
+    color: #00bcd4;
+    font-size: 2rem;
+}
+
+
+.employee-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 30px;
+    margin-top: 20px;
+}
+
+
+.employee-card {
+    background-color: #1d1d1d;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease-in-out;
+}
+
+.employee-card:hover {
+    transform: translateY(-10px);
+}
+
+.employee-card h3 {
+    color: #00bcd4;
+    font-size: 1.5rem;
+}
+
+.employee-card p {
+    margin: 5px 0;
+}
+
+button {
+    background-color: #00bcd4;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+    width: 100%;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #0097a7; 
+}
+
+
+.delete {
+    background-color: #f44336;
+}
+
+.delete:hover {
+    background-color: #d32f2f;
+}
+
+
+form {
+    background-color: #1d1d1d;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+}
+
+form input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    background-color: #333;
+    color: #f1f1f1;
+    border: 1px solid #444;
+    border-radius: 5px;
+}
+
+form input:focus {
+    border-color: #00bcd4;
+    outline: none;
+}
+
+
+label {
+    font-weight: 500;
+    color: #f1f1f1;
+}
+
+
+@media (max-width: 768px) {
+    .employee-list {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .employee-list {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+    </style>
+    
+</head>
+<body>
+
+    
+    <nav>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/add">Add Employee</a></li>
+        </ul>
+    </nav>
+
+    
+    <div class="container">
+        <h2>Edit Employee</h2>
+        
+        <form action="/update/<%= employee.id %>" method="POST">
+            <label for="employeeName">Employee Name:</label>
+            <input type="text" id="employeeName" name="employeeName" value="<%= employee.name %>" required>
+
+            <label for="employeeDesignation">Designation:</label>
+            <input type="text" id="employeeDesignation" name="employeeDesignation" value="<%= employee.designation %>" required>
+
+            <label for="employeeLocation">Location:</label>
+            <input type="text" id="employeeLocation" name="employeeLocation" value="<%= employee.location %>" required>
+
+            <label for="employeeSalary">Salary:</label>
+            <input type="number" id="employeeSalary" name="employeeSalary" value="<%= employee.salary %>" required>
+
+            <button type="submit">Update Employee</button>
+        </form>
+    </div>
+
+</body>
+</html>
